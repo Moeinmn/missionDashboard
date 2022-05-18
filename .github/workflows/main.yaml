@@ -9,7 +9,7 @@ jobs:
    env:
     CI: true
     MONGO_URL: monogodb://localhost/nasaDashboard
-   starategy:
+   strategy:
     matrix:
      node-version: [16.X]
      mongodb-version: ['4.4']
