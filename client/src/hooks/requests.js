@@ -16,7 +16,7 @@ async function httpGetLaunches() {
 // Submit given launch data to launch system.
 async function httpSubmitLaunch(launch) {
   try{
-    let req = await fetch(`${BASE_URL}/launches`,{
+    await fetch(`${BASE_URL}/launches`,{
       method: 'POST' ,
       headers:{
         "Content-Type": "application/json"
