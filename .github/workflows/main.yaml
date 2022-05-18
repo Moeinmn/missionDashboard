@@ -1,0 +1,29 @@
+name: mission-dashboard CI
+on:
+ push:
+  branches: [master]
+ pull_request:
+  branches: [master]
+jobs:
+  build:
+   env:
+    CI: true
+    MONGO_URL: monogodb://localhost/nasaDashboard
+   starategy:
+    matrix:
+     node-version: [16.X]
+     mongodb-version: ['4.4']
+   runs-on: ubuntu-latest
+   steps:
+    -uses: actions/checkout@v3
+    -name: use node version${{matrix.node-version}}
+    -uses: actions/setup-node@v2
+     with:
+      node-version: ${{matrix.node-version}}
+    -name: use mongo for github actions
+    -uses: supercharge/mongodb-github-actions@1.6.0
+    with: 
+     mongo-version: ${{matrix.mongodb-version}}
+    -run: npm run install
+    -run: npm run app
+
