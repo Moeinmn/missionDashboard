@@ -25,5 +25,5 @@ jobs:
       with: 
         mongodb-version: ${{matrix.mongodb-version}}
     - run: npm run install
-    - run: npm run app
+    # - run: npm run app
 

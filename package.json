@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install-server": "npm install --prefix server",
-    "install-client": "npm install --prefix client",
-    "install": "npm run install-server && npm run install-client",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install": "npm run install-client && npm run install-server",
     "client": "cd client && npm start",
     "server": "cd server && npm run watch",
-    "feBuild":"cd client &&  npm run build",
+    "feBuild": "cd client &&  npm run build",
     "app": "npm run feBuild && npm run server"
   },
   "author": "",
