@@ -1,11 +1,12 @@
-const http = require('http')
+const http = require('http');
+
 const mongoose = require('mongoose');
 const {
     app
 } = require('./app');
 const writeSpaceXDataToDB = require('./services/spaceX');
 
-require('dotenv').config();
+require('dotenv').config()
 
 const PORT = 8000;
 

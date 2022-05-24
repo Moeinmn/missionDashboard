@@ -1,19 +1,19 @@
 FROM node:lts-alpine
 
-WORKDIR /dockerImage
+WORKDIR /app
 
 COPY package*.json ./
 
-COPY ./client/package*.json /client
+COPY ./client/package*.json client/
 RUN npm run install-client
 
-COPY ./server/package*.json /server
+COPY ./server/package*.json server/
 RUN npm run install-server
 
-COPY ./client ./client
+COPY /client client/
 RUN npm run feBuild
 
-COPY ./server ./server
+COPY /server server/
 
 CMD [ "npm" , "run" , "app"]
 
